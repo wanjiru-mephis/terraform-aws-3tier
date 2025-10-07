@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 # === VPC Module ===
-module "three-" {
+module "three-tier-VPC" {
   source = "./vpc"
   tags   = local.common_tags
 
@@ -26,4 +26,10 @@ module "security" {
   source = "./security"
   vpc_id = module.three-tier-vpc.vpc_id
   tags   = local.common_tags
+}
+
+# === EC2 MODULE ===
+module "EC2" {
+  source = "./ec2"
+  tags = local.common_tags
 }
