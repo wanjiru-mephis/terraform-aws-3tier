@@ -72,3 +72,9 @@ variable "vpc_single_nat_gateway" {
     type = bool
     default = true
 }
+
+variable "tags" {
+  description = "Common tags applied to all resources in this VPC module"
+  type        = map(string)
+  default     = {}
+}
