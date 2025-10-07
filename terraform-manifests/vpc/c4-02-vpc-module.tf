@@ -1,5 +1,5 @@
 # VPC Module
-module "three-tier-vpc" {
+module "vpc_main" {
     source = "terraform-aws-modules/vpc/aws"
      
      # VPC Basic Details
@@ -23,8 +23,7 @@ module "three-tier-vpc" {
      enable_dns_support   = true
 
         
-     tags = local.common_tags
-     vpc_tags =  local.common_tags
+     tags = var.tags
 
      # Additional Tags to Subnets
     public_subnet_tags = {
