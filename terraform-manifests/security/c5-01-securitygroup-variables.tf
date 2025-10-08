@@ -7,3 +7,4 @@ variable "tags" {
   description = "Common tags to apply to security group resources"
   type        = map(string)
 }
+
