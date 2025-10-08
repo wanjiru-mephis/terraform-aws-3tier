@@ -10,7 +10,7 @@ module "vpc_main" {
      public_subnets = var.vpc_public_subnets
     
     # Database subnets
-     database_subnets = var.vpc.database_subnets
+     database_subnets = var.vpc_database_subnets
      create_database_subnet_group = var.vpc_create_database_subnet_group
      create_database_subnet_route_table = var.vpc_create_database_subnet_route_table
  
@@ -36,6 +36,8 @@ module "vpc_main" {
     tier = "database"
     visibility = "private"
   }
+
+  # Flow logs sent to S3 for later analyzing with Cloudwatch
     enable_flow_log = true
    flow_log_destination_type = "s3"
 
