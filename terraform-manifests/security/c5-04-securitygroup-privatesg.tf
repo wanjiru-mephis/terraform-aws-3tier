@@ -12,7 +12,7 @@ module "private_sg" {
     {
         from_port = 22
         to_port = 22
-        protocl = "tcp"
+        protocol = "tcp"
         description = "SSH from bastion host"
         source_security_group_id = module.public_bastion_sg.security_group_id
     }
