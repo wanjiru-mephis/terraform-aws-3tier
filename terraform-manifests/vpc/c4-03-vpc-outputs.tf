@@ -12,19 +12,14 @@ output "vpc_cidr_block" {
     value = module.vpc_main.vpc_cidr_block
   
 }
-
-# VPC Private Subnets
-output "private_subnets" {
-    description = "List of IDs of private subnets"
-    value = module.vpc_main.private_subnets
-  
+output "public_subnets" {
+  description = "List of public subnet IDs"
+  value       = module.vpc_main.public_subnets
 }
 
-# VPC Public Subnets
-output "public_subnets" {
-    description = "List of IDs of public subnets"
-    value = module.vpc_main.vpc.public_subnets
-  
+output "private_subnets" {
+  description = "List of private subnet IDs"
+  value       = module.vpc_main.private_subnets
 }
 
 # VPC AZs
