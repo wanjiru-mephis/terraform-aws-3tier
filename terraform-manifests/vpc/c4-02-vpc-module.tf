@@ -38,8 +38,10 @@ module "vpc_main" {
   }
 
   # Flow logs sent to S3 for later analyzing with Cloudwatch
-    enable_flow_log = true
-   flow_log_destination_type = "s3"
+    enable_flow_log           = false
+    flow_log_destination_type = "s3"
+    flow_log_destination_arn  = "arn:aws:s3:::my-vpc-flowlogs-bucket"
+
 
 
 }
